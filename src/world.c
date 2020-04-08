@@ -2,7 +2,7 @@
 #include "noise.h"
 #include "world.h"
 
-void create_world(int p, int q, world_func func, void *arg) {
+void create_world(int p, int q, world_func func, int pixelArray[][2000], void *arg) {
     int pad = 1;
     for (int dx = -pad; dx < CHUNK_SIZE + pad; dx++) {
         for (int dz = -pad; dz < CHUNK_SIZE + pad; dz++) {
@@ -15,7 +15,13 @@ void create_world(int p, int q, world_func func, void *arg) {
             float f = simplex2(x * 0.01, z * 0.01, 4, 0.5, 2);
             float g = simplex2(-x * 0.01, -z * 0.01, 2, 0.9, 2);
             int mh = g * 32 + 16;
-            int h = f * mh;
+            int h;
+            if(x > 0 && x < 2000 && z > 0 && z < 2000){
+                h = pixelArray[x][z];
+            }
+            else{
+                h = f * mh;
+            }
             int w = 1;
             int t = 12;
             if (h <= t) {
