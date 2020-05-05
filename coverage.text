@@ -1,4 +1,4 @@
-## Name                                                                                 Stmts   Miss  Cover
+Name                                                                                 Stmts   Miss  Cover
   --------------------------------------------------------------------------------------------------------
   /home/nate/.local/lib/python2.7/site-packages/_pytest/__init__.py                        5      2    60%
   /home/nate/.local/lib/python2.7/site-packages/_pytest/_argcomplete.py                   37     23    38%
